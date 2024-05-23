@@ -4,18 +4,13 @@ public class Main {
 
         Hero[] heroes = {new Warrior(), new Magic(), new Medic()};
         for(int i =0; i<heroes.length; i++){
-            useAbility(heroes[i]);
+            if(!(heroes[i] instanceof Medic)){
+                useAbility(heroes[i]);
+            }
+            Medic medic = (Medic) heroes[2];
+            medic.increaseExperience();
+            useAbility(medic);
         }
-
-
-        Medic medic = (Medic) heroes[2];
-        medic.increaseExperience();
-        useAbility(medic);
-        medic.increaseExperience();
-        useAbility(medic);
-
-
-
 
 
     }
